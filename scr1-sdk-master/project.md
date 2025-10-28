@@ -163,19 +163,7 @@ Prepare input using Python script → image.bin.
 
 ## Run accelerator test:
 
-shell
-Copy code
-Bootloader> t
-Console Output:
-
-arduino
-Copy code
-Loading image...
-Copying to BRAM...
-Starting inference...
-Inference complete.
-Predicted Digit: 2
-Verify that the prediction matches the test image.
+![Terminal](https://github.com/vsreejesh/scr1-cnn-accelerator/blob/main/scr1-sdk-master/images/Terminal%20(2).png)
 
 ## Results
 Successful integration of CNN accelerator with SCR1 RISC-V.
