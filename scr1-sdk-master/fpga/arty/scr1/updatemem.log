@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# updatemem v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Oct 23 14:43:50 2025
+# Process ID: 87976
+# Current directory: D:/VLSI_RISCV/scr1-sdk-master/fpga/arty/scr1
+# Command line: updatemem.exe -mode batch -source D:/app/Vivado/2022.2/scripts/updatemem/main.tcl -notrace -tclargs -meminfo D:/VLSI_RISCV/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/blk_mem_gen_0.mmi -data D:/VLSI_RISCV/scr1-sdk-master/fpga/arty/scr1/scbl.mem -proc dummy -bit D:/VLSI_RISCV/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/arty_scr1.bit -out D:/VLSI_RISCV/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/arty_scr1_new.bit -force
+# Log file: D:/VLSI_RISCV/scr1-sdk-master/fpga/arty/scr1/updatemem.log
+# Journal file: D:/VLSI_RISCV/scr1-sdk-master/fpga/arty/scr1\updatemem.jou
+# Running On: lap, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 12, Host memory: 16438 MB
+#-----------------------------------------------------------
+source D:/app/Vivado/2022.2/scripts/updatemem/main.tcl -notrace
+Command: update_mem -meminfo D:/VLSI_RISCV/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/blk_mem_gen_0.mmi -data D:/VLSI_RISCV/scr1-sdk-master/fpga/arty/scr1/scbl.mem -proc dummy -bit D:/VLSI_RISCV/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/arty_scr1.bit -out D:/VLSI_RISCV/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/arty_scr1_new.bit -force
+Loading bitfile D:/VLSI_RISCV/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/arty_scr1.bit
+Loading data files...
+Updating memory content...
+Creating bitstream...
+Writing bitstream D:/VLSI_RISCV/scr1-sdk-master/fpga/arty/scr1/arty_scr1/arty_scr1.runs/impl_1/arty_scr1_new.bit...
+0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+update_mem completed successfully
+update_mem: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 583.738 ; gain = 473.945
+INFO: [Common 17-206] Exiting updatemem at Thu Oct 23 14:43:58 2025...

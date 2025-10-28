@@ -1,0 +1,1 @@
+python convert_image.py my_test_digit.png image_for_xmodem.bin

@@ -1,0 +1,90 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.288333",
+   "Default View_TopLeft":"-1692,-149",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port ahb_dmem -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
+preplace port ahb_imem -pg 1 -lvl 0 -x 0 -y 50 -defaultsOSRD
+preplace port bld_id -pg 1 -lvl 5 -x 1770 -y 20 -defaultsOSRD
+preplace port core_clk_freq -pg 1 -lvl 5 -x 1770 -y 50 -defaultsOSRD
+preplace port pio_led -pg 1 -lvl 5 -x 1770 -y 110 -defaultsOSRD
+preplace port pio_led_rgb -pg 1 -lvl 5 -x 1770 -y 140 -defaultsOSRD
+preplace port pio_pb -pg 1 -lvl 5 -x 1770 -y 170 -defaultsOSRD
+preplace port ddr3 -pg 1 -lvl 5 -x 1770 -y 80 -defaultsOSRD
+preplace port soc_id -pg 1 -lvl 5 -x 1770 -y 380 -defaultsOSRD
+preplace port uart -pg 1 -lvl 5 -x 1770 -y 410 -defaultsOSRD
+preplace port port-id_cpu_clk_o -pg 1 -lvl 5 -x 1770 -y 200 -defaultsOSRD
+preplace port port-id_cpu_reset_o -pg 1 -lvl 5 -x 1770 -y 230 -defaultsOSRD
+preplace port port-id_ddr3_init_complete -pg 1 -lvl 5 -x 1770 -y 260 -defaultsOSRD
+preplace port port-id_osc_clk -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port port-id_pio_pb_irq -pg 1 -lvl 5 -x 1770 -y 290 -defaultsOSRD
+preplace port port-id_pwrup_rst_n_o -pg 1 -lvl 5 -x 1770 -y 320 -defaultsOSRD
+preplace port port-id_soc_rst_n -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD
+preplace port port-id_uart_irq -pg 1 -lvl 5 -x 1770 -y 350 -defaultsOSRD
+preplace inst ahblite_axi_bridge_0 -pg 1 -lvl 3 -x 1040 -y -40 -defaultsOSRD
+preplace inst ahblite_axi_bridge_1 -pg 1 -lvl 3 -x 1040 -y 150 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 3 -x 1040 -y 330 -defaultsOSRD
+preplace inst axi_dwidth_converter_0 -pg 1 -lvl 3 -x 1040 -y 500 -defaultsOSRD
+preplace inst axi_gpio_pb -pg 1 -lvl 3 -x 1040 -y 670 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 2 -x 600 -y 260 -defaultsOSRD
+preplace inst axi_uart16550_0 -pg 1 -lvl 2 -x 600 -y 690 -defaultsOSRD
+preplace inst bld_id -pg 1 -lvl 2 -x 600 -y 840 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 2 -x 600 -y 1040 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 2 -x 600 -y 1200 -defaultsOSRD
+preplace inst core_clk_freq -pg 1 -lvl 1 -x 230 -y 40 -defaultsOSRD
+preplace inst ddr3_sdram -pg 1 -lvl 1 -x 230 -y 240 -defaultsOSRD
+preplace inst ddr_clock_converter_0 -pg 1 -lvl 4 -x 1500 -y 600 -defaultsOSRD
+preplace inst gpio_led -pg 1 -lvl 4 -x 1500 -y 240 -defaultsOSRD
+preplace inst gpio_led_rgb -pg 1 -lvl 4 -x 1500 -y 100 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 3 -x 1040 -y 1070 -defaultsOSRD
+preplace inst soc_id -pg 1 -lvl 4 -x 1500 -y 380 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 2 -x 600 -y 1330 -defaultsOSRD
+preplace inst xlconstant_log_1 -pg 1 -lvl 1 -x 230 -y 1290 -defaultsOSRD
+preplace netloc axi_gpio_2_ip2intc_irpt 1 3 2 1270 480 1710J
+preplace netloc axi_uart16550_0_ip2intc_irpt 1 2 3 740 780 1320J 500 1730J
+preplace netloc clk_in1_0_1 1 0 2 30J 1350 410
+preplace netloc clk_wiz_0_clk_out1 1 0 5 90 120 400 940 800 410 1280 0 1720J
+preplace netloc clk_wiz_0_clk_out2 1 0 3 70 1230 350J 1390 750
+preplace netloc clk_wiz_0_clk_out3 1 0 3 50 1420 NJ 1420 740
+preplace netloc clk_wiz_0_locked 1 2 3 850 1170 NJ 1170 1750
+preplace netloc ddr_rstn_interconnect_aresetn 1 0 4 90 930 NJ 930 840 590 1230
+preplace netloc mig_7series_0_init_calib_complete 1 1 4 390 -50 810J 50 1260J 20 1680J
+preplace netloc mig_7series_0_ui_clk_sync_rst 1 1 2 360 1410 860
+preplace netloc mig_7series_1_ui_clk 1 1 3 370 580 860 580 1240
+preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 3 410 920 770 750 1330
+preplace netloc proc_sys_reset_0_mb_reset 1 3 2 1340 700 1720J
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 0 4 60 700 380 950 830 760 1310
+preplace netloc soc_rst_n_1 1 0 3 20 1110 NJ 1110 830
+preplace netloc xlconstant_log_1_dout 1 1 1 380J 1190n
+preplace netloc AHB_INTERFACE_1 1 0 3 40J 130 360J -80 840
+preplace netloc AHB_INTERFACE_2 1 0 3 50J 140 370J -70 820
+preplace netloc ahblite_axi_bridge_0_M_AXI 1 1 3 410 -120 830J -130 1220
+preplace netloc ahblite_axi_bridge_1_M_AXI 1 1 3 430 -110 840J -120 1210
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 1 3 420 960 NJ 960 1220
+preplace netloc axi_bram_ctrl_0_BRAM_PORTB 1 1 3 430 970 NJ 970 1210
+preplace netloc axi_dwidth_converter_0_M_AXI 1 0 4 80 570 NJ 570 820J 250 1240
+preplace netloc axi_gpio_0_GPIO 1 4 1 N 380
+preplace netloc axi_gpio_2_GPIO 1 3 2 1250 470 1670J
+preplace netloc axi_gpio_brd_sclkl_GPIO 1 1 4 350J -130 820J -140 1280J -130 1750
+preplace netloc axi_interconnect_0_M00_AXI 1 2 1 790 180n
+preplace netloc axi_interconnect_0_M01_AXI 1 2 2 750J 60 1300
+preplace netloc axi_interconnect_0_M02_AXI 1 1 2 430 600 750
+preplace netloc axi_interconnect_0_M03_AXI 1 0 3 60 -140 NJ -140 740
+preplace netloc axi_interconnect_0_M04_AXI 1 1 2 420 590 740
+preplace netloc axi_interconnect_0_M05_AXI 1 2 2 760J 70 1290
+preplace netloc axi_interconnect_0_M06_AXI 1 2 2 780J 230 1220
+preplace netloc axi_interconnect_0_M07_AXI 1 2 1 760 320n
+preplace netloc axi_interconnect_0_M08_AXI 1 2 2 810J 240 1260
+preplace netloc axi_uart16550_0_UART 1 2 3 750 770 1290J 490 1740J
+preplace netloc bld_id_GPIO 1 2 3 NJ 840 NJ 840 1700
+preplace netloc ddr_clock_converter_0_M_AXI 1 2 3 840 420 1250J 460 1660
+preplace netloc gpio_led_GPIO 1 4 1 1660 110n
+preplace netloc gpio_led_rgb_GPIO 1 4 1 1690 100n
+preplace netloc mig_7series_0_DDR3 1 1 4 380 -60 830J 40 1220J 10 1740J
+levelinfo -pg 1 0 230 600 1040 1500 1770
+pagesize -pg 1 -db -bbox -sgen -120 -150 1940 1430
+"
+}
+0
