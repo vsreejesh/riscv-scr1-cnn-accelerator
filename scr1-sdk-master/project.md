@@ -88,8 +88,9 @@ The `cnn_accelerator_memif_wrapper.sv` module bridges the **CNN accelerator core
 ### Bootloader Modifications (`scbl.c`, `plf_arty_scr1.h`)
 Integration was done within the **Syntacore first-stage bootloader (sc-bl)** framework.
 
+---
 #### Platform Definitions (`plf_arty_scr1.h`)
-`c
+```c
 #define PLF_CNN_ACCEL_BASE        0x00030000
 #define PLF_CNN_CTRL_REG          (*(volatile uint32_t*)(PLF_CNN_ACCEL_BASE + 0x000))
 #define PLF_CNN_STATUS_REG        (*(volatile uint32_t*)(PLF_CNN_ACCEL_BASE + 0x004))
@@ -97,7 +98,8 @@ Integration was done within the **Syntacore first-stage bootloader (sc-bl)** fra
 #define PLF_CNN_STATUS_DONE_BIT   (1 << 4)
 #define PLF_CNN_STATUS_RESULT_MSK 0x0F
 #define PLF_CNN_IMG_BUF_ADDR      0x00100000
-
+}
+```
 
 ## 3.New Bootloader Command
 A new command t was added to test the accelerator via UART.
