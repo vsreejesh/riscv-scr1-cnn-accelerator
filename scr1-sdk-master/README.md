@@ -1,8 +1,8 @@
 #  CNN Accelerator + SCR1 RISC-V Integration  
-### Open-source SDK for Hardware-Accelerated Neural Network Inference
+###  Hardware-Accelerated Neural Network Inference
 
-![Demo Video or Screenshot](docs/demo.gif)  
-*(Replace this with your demo GIF or image)*
+![CNN on SCR1](https://github.com/vsreejesh/riscv-scr1-cnn-accelerator/blob/main/scr1-sdk-master/images/Teraterm.gif)  
+*(PROJECT)*
 
 ---
 
@@ -94,7 +94,8 @@ Load the generated .mcs file:
 
 D:\scr1-sdk-master\fpga\arty\scr1\arty_scr1\arty_scr1.runs\impl_1\arty_scr1_new.mcs
 ```
-Running the Bootloader and CNN Test
+## Running the Bootloader and CNN Test
+
 Open Tera Term and connect to the correct COM port.
 
 Set baud rate = 115200.
@@ -119,6 +120,8 @@ Files → Transfer → XMODEM → Send
 ```
 Select your image.bin file.
 The system will automatically perform inference and display the predicted digit.
+
+![CNN on SCR1](https://github.com/vsreejesh/riscv-scr1-cnn-accelerator/blob/main/scr1-sdk-master/images/Teraterm.gif) 
 
 ## Creating the MNIST .bin File
 To prepare an MNIST handwritten digit file for inference:
