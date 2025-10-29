@@ -1,7 +1,7 @@
 #  CNN Accelerator + SCR1 RISC-V Integration  
 ###  Hardware-Accelerated Neural Network Inference
 
-![CNN on SCR1](https://github.com/vsreejesh/riscv-scr1-cnn-accelerator/blob/main/scr1-sdk-master/images/Teraterm.gif)  
+![CNN on SCR1](https://github.com/vsreejesh/riscv-scr1-cnn-accelerator/blob/main/scr1-sdk-master/images/project.gif)  
 
 
 ---
