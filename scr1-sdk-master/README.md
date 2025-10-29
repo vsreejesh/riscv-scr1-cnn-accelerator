@@ -2,7 +2,7 @@
 ###  Hardware-Accelerated Neural Network Inference
 
 ![CNN on SCR1](https://github.com/vsreejesh/riscv-scr1-cnn-accelerator/blob/main/scr1-sdk-master/images/Teraterm.gif)  
-*(PROJECT)*
+
 
 ---
 
@@ -121,7 +121,7 @@ Files → Transfer → XMODEM → Send
 Select your image.bin file.
 The system will automatically perform inference and display the predicted digit.
 
-![CNN on SCR1](https://github.com/vsreejesh/riscv-scr1-cnn-accelerator/blob/main/scr1-sdk-master/images/Teraterm.gif) 
+![Running the Bootloader and CNN Test](https://github.com/vsreejesh/riscv-scr1-cnn-accelerator/blob/main/scr1-sdk-master/images/Teraterm.gif) 
 
 ## Creating the MNIST .bin File
 To prepare an MNIST handwritten digit file for inference:
@@ -140,6 +140,8 @@ Run it (recommended: Google Colab for easy setup).
 The script will generate an image.bin file in Q1.15 fixed-point format.
 
 #### Download and use this image.bin when transferring via XMODEM.
+![Creating the MNIST .bin File](https://github.com/vsreejesh/riscv-scr1-cnn-accelerator/blob/main/scr1-sdk-master/images/image_conversion.gif) 
+
 
 ## Notes
 The cnn_git folder can be reused as a standalone accelerator project.
