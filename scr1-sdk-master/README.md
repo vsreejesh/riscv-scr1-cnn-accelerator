@@ -63,8 +63,8 @@ Run Synthesis → Implementation → Generate Bitstream.
 
 In the synthesis schematic, you can verify that the CNN accelerator module is integrated with the SCR1 RISC-V core.
 
-![cnn on risc v]([docs/demo.gif](https://github.com/vsreejesh/riscv-scr1-cnn-accelerator/blob/main/scr1-sdk-master/images/schematic.gif))  
-*(Replace this with your demo GIF or image)*
+![cnn on risc v](https://github.com/vsreejesh/riscv-scr1-cnn-accelerator/blob/main/scr1-sdk-master/images/schematic.gif)  
+*(cnn accelerator on riscv scr1)*
 
 ### 3. Update Memory
 After generating the bitstream:
