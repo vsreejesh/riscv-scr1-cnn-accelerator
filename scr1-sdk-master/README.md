@@ -150,9 +150,6 @@ Make sure all .coe coefficient files are properly linked during synthesis.
 
 Ensure Python 3.x and libraries such as numpy and Pillow are installed if running locally.
 
-License
-This project follows the MIT License. See the LICENSE file for details.
-
 Project :SCR1 + CNN Accelerator Integration
 Platform: Xilinx Arty A7-100T
 Languages: Verilog/SystemVerilog, C, Python
