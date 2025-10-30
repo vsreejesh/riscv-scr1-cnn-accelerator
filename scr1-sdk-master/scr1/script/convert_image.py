@@ -1,37 +1,86 @@
-import sys
-from PIL import Image
+# ---------------------------------------------------------------
+# 1. Install necessary library
+# ---------------------------------------------------------------
+!pip install pillow
+
 import numpy as np
+from PIL import Image, ImageOps
+from google.colab import files
 import struct
+import io
 
-def q15_from_float(x_float):
-    """ Converts normalized float to Q1.15 fixed-point """
-    x_clipped = np.clip(x_float, 0.0, 1.0)
-    return np.round(x_clipped * (2**15 - 1)).astype(np.int16)
+# ---------------------------------------------------------------
+# 2. Upload your image file
+# ---------------------------------------------------------------
+print("Please upload your handwritten digit image (JPG, PNG, etc.)...")
+uploaded = files.upload()
 
-def main():
-    if len(sys.argv) != 3:
-        print(f"Usage: python {sys.argv[0]} <input_image.png> <output_file.bin>")
-        return
+if not uploaded:
+    print("\nNo file uploaded. Please run the cell again.")
+else:
+    # Get the filename (works with one file)
+    input_filename = list(uploaded.keys())[0]
 
-    input_path = sys.argv[1]
-    output_path = sys.argv[2]
+    print(f"\nProcessing '{input_filename}'...")
 
-    # Load and process the image
-    img = Image.open(input_path).convert("L")
-    img = img.resize((28, 28))
-    data = np.asarray(img)
-    
-    # Convert to Q1.15 format, shape (784, 1)
-    data_q15 = q15_from_float(data / 255.0).reshape(784, 1)
+    # ---------------------------------------------------------------
+    # 3. Process the image
+    # ---------------------------------------------------------------
 
-    # Save as raw binary file
-    with open(output_path, "wb") as f:
-        for val in data_q15:
-            # Pack as little-endian 16-bit signed integer (<h)
-            f.write(struct.pack('<h', val.item()))
-    
-    print(f"Successfully converted '{input_path}' to '{output_path}'.")
-    print(f"Total bytes: {784 * 2} (1568 bytes)")
+    # Open the image from the in-memory bytes
+    img = Image.open(io.BytesIO(uploaded[input_filename]))
 
-if __name__ == "__main__":
-    main()
+    # Convert to grayscale ('L' mode)
+    img_gray = img.convert('L')
+
+    # Resize to 28x28
+    # We use Image.LANCZOS for the best downscaling quality
+    img_resized = img_gray.resize((28, 28), Image.LANCZOS)
+
+    # Invert the image
+    # MNIST models expect white digits (255) on a black background (0)
+    # User-drawn images are usually black digits (0) on white (255)
+    img_inverted = ImageOps.invert(img_resized)
+
+    # Convert image to a numpy array (values 0-255)
+    pixel_data = np.array(img_inverted)
+
+    # ---------------------------------------------------------------
+    # 4. Convert pixels to Q1.15 fixed-point format
+    # ---------------------------------------------------------------
+
+    # a. Normalize 0-255 -> 0.0-1.0
+    normalized_data = pixel_data / 255.0
+
+    # b. Scale to Q1.15 range (max value is 2^15 - 1 = 32767)
+    q15_data = (normalized_data * 32767.0).astype(np.int16)
+
+    # c. Flatten the 28x28 array to a 1D array of 784 numbers
+    flat_data = q15_data.flatten()
+
+    # ---------------------------------------------------------------
+    # 5. Write the binary file (image.bin)
+    # ---------------------------------------------------------------
+
+    output_filename = 'image.bin'
+
+    with open(output_filename, 'wb') as f:
+        for pixel in flat_data:
+            # This is the most important step.
+            # Your C code reads a 32-bit word (uint32_t) for each pixel.
+            # Your hardware wrapper uses the lower 16 bits (port_wdata[15:0]).
+            #
+            # We pack each 16-bit pixel ('h') with 2 bytes of
+            # zero-padding ('xx') to create a 4-byte (32-bit) word.
+            # '<' means little-endian, to match the RISC-V core.
+
+            f.write(struct.pack('<hxx', pixel))
+
+    print(f"Successfully created '{output_filename}'")
+    print(f"Total size: {len(flat_data) * 4} bytes (784 32-bit words)")
+
+    # ---------------------------------------------------------------
+    # 6. Download the file
+    # ---------------------------------------------------------------
+    print("Downloading 'image.bin' to your computer...")
+    files.download(output_filename)
